@@ -8,7 +8,7 @@
             "type": "lua",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/resistor-color-duo/resistor-color-duo_spec.lua"
+            "program": "${workspaceFolder}/armstrong-number/armstrong-number-test.lua"
         }
     ]
 }
