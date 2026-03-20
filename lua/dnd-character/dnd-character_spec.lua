@@ -72,7 +72,12 @@ describe('dnd', function()
     it('random ability is within range', function()
       for i = 1, 10 do
         local ability_score = dnd.ability()
-        assert.equal('integer', math.type(ability_score))
+        if math.type then
+          assert.equal('integer', math.type(ability_score))
+        else
+          assert.is_number(ability_score)
+          assert.equal(ability_score, math.floor(ability_score), "ability score should be integer")
+        end
         assert.lteq(3, ability_score)
         assert.lteq(ability_score, 18)
       end
