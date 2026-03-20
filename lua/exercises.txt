@@ -9,11 +9,11 @@
 √ clock
 √ collatz-conjecture
 √ dnd-character
-etl
+√ etl
 food-chain
 house
-isbn-verifier
-line-up
+√ isbn-verifier
+√ line-up
 matrix
 nucleotide-count
 pangram
