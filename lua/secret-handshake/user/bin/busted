@@ -1,0 +1,3 @@
+#!/bin/sh
+
+LUAROCKS_SYSCONFDIR='/etc/luarocks' exec '/usr/bin/lua5.4' -e 'package.path="/mnt/c/workspace/lua/exercism/lua/secret-handshake/user/share/lua/5.4/?.lua;/mnt/c/workspace/lua/exercism/lua/secret-handshake/user/share/lua/5.4/?/init.lua;"..package.path;package.cpath="/mnt/c/workspace/lua/exercism/lua/secret-handshake/user/lib/lua/5.4/?.so;"..package.cpath;local k,l,_=pcall(require,"luarocks.loader") _=k and l.add_context("busted","2.3.0-1")' '/mnt/c/workspace/lua/exercism/lua/secret-handshake/user/lib/luarocks/rocks-5.4/busted/2.3.0-1/bin/busted' "$@"

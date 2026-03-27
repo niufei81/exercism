@@ -10,23 +10,34 @@
 √ collatz-conjecture
 √ dnd-character
 √ etl
-food-chain
-house
+√ food-chain
+√ house
 √ isbn-verifier
 √ line-up
-matrix
-nucleotide-count
-pangram
-perfect-numbers
+√ matrix
+√ nucleotide-count
+√ pangram
+√ perfect-numbers
 
-phone-number
-protein-translation
-proverb
-pythagorean-triplet
-queen-attack
-reverse-string
-rna-transcription
-robot-simulator
-saddle-points
-scrabble-score
-secret-handshake
+√ phone-number
+√ protein-translation
+√ proverb
+√ pythagorean-triplet
+√ queen-attack
+√ reverse-string
+√ rna-transcription
+√ robot-simulator
+√ saddle-points
+√ scrabble-score
+√ secret-handshake
+rotational-cipher
+atbash-cipher
+gigasecond
+triangle
+twelve-days
+word-count
+
+acronym
+all-your-base
+allergies
+binary-search

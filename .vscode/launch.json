@@ -8,7 +8,7 @@
             "type": "lua",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/lua/atbash-cipher/atbash-cipher_test.lua"
+            "program": "${workspaceFolder}/lua/saddle-points/saddle-points_test.lua"
         }
     ]
 }
