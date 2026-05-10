@@ -1,67 +1,38 @@
---[[
-On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.
-
-On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the seventh day of Christmas my true love gave to me: seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the eighth day of Christmas my true love gave to me: eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the ninth day of Christmas my true love gave to me: nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
-
-On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
---]]
-
-local sequences = {
-    "first", "second", "third", "fourth", "fifth", "sixth",
-    "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth",
-}
-
-local days = {
-    "a Partridge in a Pear Tree",
+local seq = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"}
+local loves = {
+    "a Partridge",
     "two Turtle Doves",
-    "three French Hens",
-    "four Calling Birds",
-    "five Gold Rings",
+    "three French Hens", 
+    "four Calling Birds", 
+    "five Gold Rings", 
     "six Geese-a-Laying",
-    "seven Swans-a-Swimming",
-    "eight Maids-a-Milking",
-    "nine Ladies Dancing",
-    "ten Lords-a-Leaping",
-    "eleven Pipers Piping",
-    "twelve Drummers Drumming",
+    "seven Swans-a-Swimming", 
+    "eight Maids-a-Milking", 
+    "nine Ladies Dancing", 
+    "ten Lords-a-Leaping", 
+    "eleven Pipers Piping", 
+    "twelve Drummers Drumming"
 }
+
+local template = "On the %s day of Christmas my true love gave to me: %s in a Pear Tree."
 
 local function recite(start_verse, end_verse)
     local result = {}
     for i = start_verse, end_verse do
-        local gifts = ""
+        local love_i = ""
         if i == 1 then
-            gifts = days[1]
+            love_i = loves[i]
         else
-            for j = 1, i do
+            for j = i, 1, -1 do
                 if j == 1 then
-                    gifts = "and " .. days[1]
+                    love_i = love_i .. "and " .. loves[j]
                 else
-                    gifts = days[j] .. ", " .. gifts
+                    love_i = love_i .. loves[j] .. ", "
                 end
             end
         end
-
-        local s = string.format("On the %s day of Christmas my true love gave to me: %s.", sequences[i], gifts)
-        table.insert(result, s)
+        local verb = string.format(template, seq[i], love_i)
+        table.insert(result, verb)
     end
     return result
 end

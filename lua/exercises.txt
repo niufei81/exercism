@@ -34,7 +34,7 @@
 √ atbash-cipher
 gigasecond
 √ triangle
-√ twelve-days
+√ √ twelve-days
 √ word-count
 
 √ acronym
