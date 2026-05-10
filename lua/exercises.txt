@@ -39,5 +39,5 @@ gigasecond
 
 √ acronym
 √ all-your-base
-allergies
+√ allergies
 √ binary-search
