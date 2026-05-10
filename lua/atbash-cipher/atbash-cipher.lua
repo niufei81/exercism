@@ -15,18 +15,15 @@ local function encode(phrase)
     if not phrase or phrase == "" then
         return result
     end
-    local group_count = 0
-    for i=1, #phrase do
-        local c = phrase:sub(i, i)
-        if c and c ~= ' 'then
-            if group_count == 5 then
-                result = result .. ' '
-                group_count = 0
-            end            
-            result = result .. encodes[c]
-            group_count = group_count + 1
-        end 
+    local j = 0
+    for c in phrase:gmatch("[%d%a]") do
+        if j ~= 0 and j % 5 == 0 then
+            result = result .. ' '
+        end
+        result = result .. (encodes[c] or c)
+        j = j + 1
     end
+    return result
 end
 
 local function decode(phrase)
@@ -34,11 +31,8 @@ local function decode(phrase)
     if not phrase or phrase == "" then
         return result
     end
-    for i=1, #phrase do
-        local c = phrase:sub(i, i)
-        if c ~= ' ' then
-            result = result .. decodes[c]
-        end 
+    for c in phrase:gmatch("[%d%a]") do
+        result = result .. (decodes[c] or c)
     end
     return result
 end

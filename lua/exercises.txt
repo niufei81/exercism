@@ -30,14 +30,14 @@
 √ saddle-points
 √ scrabble-score
 √ secret-handshake
-rotational-cipher
-atbash-cipher
+√ rotational-cipher
+√ atbash-cipher
 gigasecond
-triangle
-twelve-days
-word-count
+√ triangle
+√ twelve-days
+√ word-count
 
-acronym
-all-your-base
+√ acronym
+√ all-your-base
 allergies
-binary-search
+√ binary-search
